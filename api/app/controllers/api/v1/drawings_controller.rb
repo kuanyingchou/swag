@@ -1,6 +1,18 @@
 module Api
 	module V1
 		class DrawingsController < ApplicationController
+			def create
+				@drawing = Drawing.create(user_id: params[:user_id]) # upload file
+				if @drawing.save
+					render json: @drawing, status: 204
+				else
+					render json: {"error": "failed to create resource"}, status: 422
+				end
+			end
+			def show
+				@drawing = Drawing.find(params[:id])
+				render json: { drawing: @drawing, comments: @drawing.comments, likes: @drawing.likes.count }, status: 200
+			end
 		end
 	end
 end
