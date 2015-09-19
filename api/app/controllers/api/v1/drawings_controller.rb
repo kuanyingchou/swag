@@ -3,6 +3,7 @@ module Api
 		class DrawingsController < ApplicationController
 			def create
 				@drawing = Drawing.create(user_id: params[:user_id]) # upload file
+				# randomly pick a chinese character
 				if @drawing.save
 					render json: @drawing, status: 204
 				else
