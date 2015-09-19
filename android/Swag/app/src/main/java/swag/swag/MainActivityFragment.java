@@ -11,12 +11,30 @@ import android.view.ViewGroup;
  */
 public class MainActivityFragment extends Fragment {
 
+    private MySurfaceView surfaceView;
+
     public MainActivityFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_main, container, false);
+
+        surfaceView = new MySurfaceView(getActivity());
+        root.addView(surfaceView);
+        return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        surfaceView.onResumeMySurfaceView();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        surfaceView.onPauseMySurfaceView();
     }
 }
