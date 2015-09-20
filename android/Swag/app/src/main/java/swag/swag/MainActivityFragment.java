@@ -188,8 +188,21 @@ public class MainActivityFragment extends Fragment {
         Log.d(">>>>", json);
         SwagService service = retrofit.create(SwagService.class);
         //service.addDrawing(json);
-        Call<List<Drawing>> call = service.listDrawings();
-        call.enqueue(new Callback<List<Drawing>>() {
+        Call<Drawing> call = service.addDrawing(json);
+        call.enqueue(new Callback<Drawing>() {
+            @Override
+            public void onResponse(Response<Drawing> response) {
+                Log.d(">>>", response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                Log.e("!!!!!!!!", t.toString());
+            }
+        });
+
+        Call<List<Drawing>> listCall = service.listDrawings();
+        listCall.enqueue(new Callback<List<Drawing>>() {
             @Override
             public void onResponse(Response<List<Drawing>> response) {
                 // Get result Repo from response.body()
@@ -197,7 +210,7 @@ public class MainActivityFragment extends Fragment {
 
             @Override
             public void onFailure(Throwable t) {
-
+                Log.e("!!!!!!!!", "");
             }
         });
 

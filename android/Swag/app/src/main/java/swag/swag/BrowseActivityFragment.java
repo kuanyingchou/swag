@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.gson.Gson;
@@ -37,13 +36,13 @@ public class BrowseActivityFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_browse, container, false);
         GridView view = (GridView) root.findViewById(R.id.browse_grid);
 
-        ImageButton btn = (ImageButton)view.findViewById(R.id.refresh_button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO
-            }
-        });
+//        ImageButton btn = (ImageButton)view.findViewById(R.id.refresh_button);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //TODO
+//            }
+//        });
 
         WordSqlHelper helper = new WordSqlHelper(getActivity());
         SQLiteDatabase db = helper.getReadableDatabase();
