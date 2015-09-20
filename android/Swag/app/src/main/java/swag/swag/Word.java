@@ -12,7 +12,7 @@ import java.util.List;
 @Parcel
 public class Word {
     float size;
-    float strokeWidth = .05f;
+
     List<Stroke> mStrokes;
 
     public Word() {
@@ -32,7 +32,6 @@ public class Word {
 
     public void draw(Canvas canvas, Paint paint) {
         paint.setColor(Color.BLACK);
-        paint.setStrokeWidth(strokeWidth * size);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
 
