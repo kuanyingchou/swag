@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import org.parceler.Parcels;
 
@@ -50,8 +51,17 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_main, container, false);
 
+        final FrameLayout squareContainer = new FrameLayout(getActivity()) {
+            @Override
+            protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+                int size = Math.min(widthMeasureSpec, heightMeasureSpec);
+                super.onMeasure(size, size);
+            }
+        };
+        root.addView(squareContainer);
+
         surfaceView = new MySurfaceView(getActivity());
-        root.addView(surfaceView);
+        squareContainer.addView(surfaceView);
 
         if(savedInstanceState!=null) {
             Word w = Parcels.unwrap(savedInstanceState.getParcelable(KEY_WORD));

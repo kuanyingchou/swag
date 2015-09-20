@@ -15,7 +15,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
     SurfaceHolder surfaceHolder;
     volatile boolean running = false;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Word mStrokes = new Word();
+    private Word mWord = new Word();
     private Stroke mCurrentStroke;
 
     public MySurfaceView(Context context) {
@@ -54,14 +54,25 @@ class MySurfaceView extends SurfaceView implements Runnable {
 
                 //clear background
                 mPaint.setColor(Color.WHITE);
+                mPaint.setStyle(Paint.Style.FILL);
                 canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), mPaint);
 
-                mPaint.setColor(Color.BLACK);
-                mPaint.setStrokeWidth(50);
-                mPaint.setStrokeCap(Paint.Cap.ROUND);
-                mPaint.setStrokeJoin(Paint.Join.ROUND);
+                //draw frames
+                final float w = canvas.getWidth();
+                final float h = canvas.getHeight();
+                mPaint.setColor(Color.RED);
+                mPaint.setStyle(Paint.Style.STROKE);
+                mPaint.setStrokeWidth(10);
+                canvas.drawRect(0, 0, w, h, mPaint);
 
-                mStrokes.draw(canvas, mPaint);
+                mPaint.setStrokeWidth(1);
+                final float oneThrid = w/3;
+                canvas.drawLine(oneThrid, 0, oneThrid, h, mPaint);
+                canvas.drawLine(oneThrid*2, 0, oneThrid*2, h, mPaint);
+                canvas.drawLine(0, oneThrid, w, oneThrid, mPaint);
+                canvas.drawLine(0, oneThrid*2, w, oneThrid*2, mPaint);
+
+                mWord.draw(canvas, mPaint);
 
 
                 surfaceHolder.unlockCanvasAndPost(canvas);
@@ -71,17 +82,16 @@ class MySurfaceView extends SurfaceView implements Runnable {
     }
 
     public Word getStrokes() {
-        return mStrokes;
+        return mWord;
     }
 
     public void setStrokes(Word strokes) {
-        mStrokes = strokes;
+        mWord = strokes;
     }
 
     public void refresh() {
-        mStrokes = new Word();
+        mWord = new Word();
     }
-
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -91,20 +101,19 @@ class MySurfaceView extends SurfaceView implements Runnable {
             case MotionEvent.ACTION_DOWN:
                 mCurrentStroke = new Stroke();
                 mCurrentStroke.add(new Point(event.getX(), event.getY()));
-                mStrokes.add(mCurrentStroke);
+                mWord.add(mCurrentStroke);
                 break;
             case MotionEvent.ACTION_MOVE:
+            case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_OUTSIDE:
                 mCurrentStroke.add(new Point(event.getX(), event.getY()));
                 break;
             case MotionEvent.ACTION_UP:
                 mCurrentStroke.add(new Point(event.getX(), event.getY()));
                 mCurrentStroke.simplify();
-                //Log.d(">>>>>>>", mStrokes.toString());
+                //Log.d(">>>>>>>", mWord.toString());
                 break;
-            case MotionEvent.ACTION_CANCEL:
-                break;
-            case MotionEvent.ACTION_OUTSIDE:
-                break;
+
             default:
         }
         return true; //processed
