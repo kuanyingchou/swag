@@ -8,10 +8,23 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
+//ref: http://android-coding.blogspot.com/2011/05/handle-ontouchevent-in-surfaceview.html
 class MySurfaceView extends SurfaceView implements Runnable {
+    private class Point {
+        private float x;
+        private float y;
+        public Point(float x, float y) {
+            this.x = x;
+            this.y = y;
+        }
+        public float getX() { return x; }
+        public float getY() { return y; }
 
+    }
     Thread thread = null;
     SurfaceHolder surfaceHolder;
     volatile boolean running = false;
@@ -20,7 +33,10 @@ class MySurfaceView extends SurfaceView implements Runnable {
     Random random;
 
     volatile boolean touched = false;
-    volatile float touched_x, touched_y;
+    //volatile float touched_x, touched_y;
+    private List<List<Point>> strokes = new ArrayList<>();
+    private List<Point> mCurrentStroke;
+
 
     public MySurfaceView(Context context) {
         super(context);
@@ -49,33 +65,35 @@ class MySurfaceView extends SurfaceView implements Runnable {
         }
     }
 
+
     @Override
     public void run() {
         // TODO Auto-generated method stub
         //Log.d(">>>>>>>>", "start running");
+
         while (running) {
             if (surfaceHolder.getSurface().isValid()) {
                 Canvas canvas = surfaceHolder.lockCanvas();
-                //... actual drawing on canvas
+                paint.setColor(Color.WHITE);
+                canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), paint);
 
-                paint.setStyle(Paint.Style.STROKE);
-                paint.setStrokeWidth(3);
+                paint.setStrokeWidth(50);
+                paint.setStrokeCap(Paint.Cap.ROUND);
+                paint.setColor(Color.BLACK);
 
-                int w = canvas.getWidth();
-                int h = canvas.getHeight();
-                int x = random.nextInt(w - 1);
-                int y = random.nextInt(h - 1);
-                int r = random.nextInt(255);
-                int g = random.nextInt(255);
-                int b = random.nextInt(255);
-                paint.setColor(0xff000000 + (r << 16) + (g << 8) + b);
-                canvas.drawPoint(x, y, paint);
-
-                if (touched) {
-                    paint.setStrokeWidth(50);
-                    paint.setColor(Color.BLACK);
-                    canvas.drawPoint(touched_x, touched_y, paint);
+                //draw old strokes
+                if(strokes.size() > 1) {
+                    for (int i = 0; i < strokes.size() - 1; i++) {
+                        final List<Point> stroke = strokes.get(i);
+                        drawStroke(stroke, canvas);
+                    }
                 }
+                if(strokes.size() > 0) {
+                    final List<Point> copy = new ArrayList<>(mCurrentStroke); //copy
+                    drawStroke(copy, canvas);
+                }
+
+
 
                 surfaceHolder.unlockCanvasAndPost(canvas);
                 //Log.d(">>>>>>>>", "!");
@@ -83,23 +101,39 @@ class MySurfaceView extends SurfaceView implements Runnable {
         }
     }
 
+    private void drawStroke(List<Point> stroke, Canvas canvas) {
+        if(stroke.size() == 1) {
+            final Point p = stroke.get(0);
+            canvas.drawPoint(p.getX(), p.getY(), paint);
+        } else if(stroke.size() > 1) {
+            for(int i = 0; i<stroke.size()-1; i++) {
+                final Point start = stroke.get(i);
+                final Point stop = stroke.get(i+1);
+                canvas.drawLine(start.getX(), start.getY(), stop.getX(), stop.getY(), paint);
+            }
+        } else {
+            //empty stroke???
+        }
+    }
+
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // TODO Auto-generated method stub
-
-        touched_x = event.getX();
-        touched_y = event.getY();
-
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 touched = true;
+                mCurrentStroke = new ArrayList<Point>();
+                mCurrentStroke.add(new Point(event.getX(), event.getY()));
+                strokes.add(mCurrentStroke);
                 break;
             case MotionEvent.ACTION_MOVE:
                 touched = true;
+                mCurrentStroke.add(new Point(event.getX(), event.getY()));
                 break;
             case MotionEvent.ACTION_UP:
                 touched = false;
+                mCurrentStroke.add(new Point(event.getX(), event.getY()));
                 break;
             case MotionEvent.ACTION_CANCEL:
                 touched = false;
