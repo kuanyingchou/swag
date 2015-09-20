@@ -49,4 +49,15 @@ public class Word {
         }
     }
 
+    public int getPointCount() {
+        int sum = 0;
+        for(int i=0; i<mStrokes.size(); i++) {
+            sum += mStrokes.get(i).points.size();
+        }
+        return sum;
+    }
+
+    public String toString() {
+        return mStrokes.toString();
+    }
 }

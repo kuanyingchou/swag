@@ -114,17 +114,22 @@ class MySurfaceView extends SurfaceView implements Runnable {
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 mCurrentStroke = new Stroke();
-                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize));
+                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize,
+                        event.getPressure()));
                 mWord.add(mCurrentStroke);
                 break;
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_OUTSIDE:
-                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize));
+                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize,
+                        event.getPressure()));
                 break;
             case MotionEvent.ACTION_UP:
-                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize));
+                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize,
+                        event.getPressure()));
                 mCurrentStroke.simplify();
+                //Log.d(">>>>>>>", mWord.getPointCount()+"");
+                //Log.d(">>>>>>>", mWord.mStrokes.size()+"");
                 //Log.d(">>>>>>>", mWord.toString());
                 break;
 

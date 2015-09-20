@@ -12,7 +12,7 @@ import java.util.List;
 @Parcel
 public class Stroke {
     List<Point> points;
-    float strokeWidth = .05f;
+    float strokeWidth = .1f;
 
     public Stroke() {
         points = new ArrayList<>();
@@ -37,29 +37,31 @@ public class Stroke {
 
     public void draw(Canvas canvas, Paint paint, float size) {
         if(points.size() == 1) {
+            paint.setColor(Color.BLACK);
+            paint.setStrokeWidth(strokeWidth * size * points.get(0).getPressure());
             final Point p = points.get(0);
             p.draw(canvas, paint, size);
         } else if(points.size() > 1) {
             paint.setColor(Color.BLACK);
-            paint.setStrokeWidth(strokeWidth * size);
             for(int i = 0; i<points.size()-1; i++) {
                 final Point start = points.get(i);
                 final Point stop = points.get(i+1);
+                paint.setStrokeWidth(strokeWidth * size * start.getPressure() * start.getPressure());
                 canvas.drawLine(
                         start.getX() * size, start.getY() * size,
                         stop.getX() * size, stop.getY() * size, paint);
 
             }
-            paint.setColor(Color.GREEN);
-            paint.setStrokeWidth(1);
-            for(int i = 0; i<points.size()-1; i++) {
-                final Point start = points.get(i);
-                final Point stop = points.get(i+1);
-                canvas.drawLine(
-                        start.getX() * size, start.getY() * size,
-                        stop.getX() * size, stop.getY() * size, paint);
-
-            }
+//            paint.setColor(Color.GREEN);
+//            paint.setStrokeWidth(1);
+//            for(int i = 0; i<points.size()-1; i++) {
+//                final Point start = points.get(i);
+//                final Point stop = points.get(i+1);
+//                canvas.drawLine(
+//                        start.getX() * size, start.getY() * size,
+//                        stop.getX() * size, stop.getY() * size, paint);
+//
+//            }
 
         } else {
             //ignore empty stroke

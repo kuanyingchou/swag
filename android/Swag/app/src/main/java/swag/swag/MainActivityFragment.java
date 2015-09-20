@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import org.parceler.Parcels;
@@ -63,6 +64,14 @@ public class MainActivityFragment extends Fragment {
         surfaceView = new MySurfaceView(getActivity());
         squareContainer.addView(surfaceView);
         //root.addView(surfaceView);
+
+        Button saveButton = (Button) root.findViewById(R.id.action_save);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         if(savedInstanceState!=null) {
             Word w = Parcels.unwrap(savedInstanceState.getParcelable(KEY_WORD));

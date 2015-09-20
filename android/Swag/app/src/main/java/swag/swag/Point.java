@@ -9,15 +9,17 @@ import org.parceler.Parcel;
 public class Point {
     float x;
     float y;
+    float p;
     static float err = 0.00001f;
 
     public Point() {
-        this(0, 0);
+        this(0, 0, 0);
     }
 
-    public Point(float x, float y) {
+    public Point(float x, float y, float p) {
         this.x = x;
         this.y = y;
+        this.p = p;
     }
 
     public float getX() {
@@ -26,6 +28,9 @@ public class Point {
 
     public float getY() {
         return y;
+    }
+    public float getPressure() {
+        return p;
     }
 
     @Override
