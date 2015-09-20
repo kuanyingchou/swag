@@ -22,8 +22,13 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/action_reset"
+                android:text="Clear"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/action_save"
-                android:text="Done"/>
+                android:text="Save"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

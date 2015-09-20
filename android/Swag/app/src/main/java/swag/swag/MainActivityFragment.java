@@ -16,13 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
 import org.parceler.Parcels;
 
 import java.io.File;
-import java.util.Calendar;
 
 import swag.swag.data.WordContract;
 
@@ -90,10 +90,7 @@ public class MainActivityFragment extends Fragment {
 
                 ContentValues cv = new ContentValues();
 
-                Calendar c = Calendar.getInstance();
-                int seconds = c.get(Calendar.SECOND);
-
-                cv.put(WordContract.WordEntry.COLUMN_DATE, seconds);
+                cv.put(WordContract.WordEntry.COLUMN_DATE, System.currentTimeMillis());
                 cv.put(WordContract.WordEntry.COLUMN_SKETCH, json);
 
                 long id = db.insert(WordContract.WordEntry.TABLE_NAME, null, cv); //TODO: err handling
@@ -102,9 +99,11 @@ public class MainActivityFragment extends Fragment {
                 Bitmap bitmap = Bitmap.createBitmap(192, 192, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(bitmap);
                 surfaceView.getWord().draw(canvas, new Paint(), 192);
-                File file = new File(getActivity().getFilesDir(), id+".png");
+                File file = new File(getActivity().getFilesDir(), id + ".png");
                 Utility.saveBitmapToFile(bitmap, file);
 
+                Toast.makeText(getActivity(), "Saved!", Toast.LENGTH_SHORT).show();
+                surfaceView.reset();
                 //Log.d(">>> ", gson.toJson(surfaceView.getWord()));
 
             }
@@ -115,6 +114,14 @@ public class MainActivityFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BrowseActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        Button resetButton = (Button) root.findViewById(R.id.action_reset);
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                surfaceView.reset();
             }
         });
 
