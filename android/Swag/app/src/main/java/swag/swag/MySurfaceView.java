@@ -85,6 +85,10 @@ class MySurfaceView extends SurfaceView implements Runnable {
         }
     }
 
+    public void refresh() {
+        mStrokes = new ArrayList<>();
+    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
