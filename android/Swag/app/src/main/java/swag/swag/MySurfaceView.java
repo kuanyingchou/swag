@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -46,6 +45,13 @@ class MySurfaceView extends SurfaceView implements Runnable {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        //int size = Math.min(getRootView().getMeasuredWidth(), getRootView().getMeasuredHeight());
+        int size = Math.min(widthMeasureSpec, heightMeasureSpec);
+        setMeasuredDimension(size, size);
+    }
+
+    @Override
     public void run() {
         // TODO Auto-generated method stub
         //Log.d(">>>>>>>>", "start running");
@@ -68,11 +74,11 @@ class MySurfaceView extends SurfaceView implements Runnable {
                 canvas.drawRect(0, 0, w, h, mPaint);
 
                 mPaint.setStrokeWidth(2);
-                final float oneThrid = w/3;
-                canvas.drawLine(oneThrid, 0, oneThrid, h, mPaint);
-                canvas.drawLine(oneThrid*2, 0, oneThrid*2, h, mPaint);
-                canvas.drawLine(0, oneThrid, w, oneThrid, mPaint);
-                canvas.drawLine(0, oneThrid*2, w, oneThrid*2, mPaint);
+                final float oneThird = w/3;
+                canvas.drawLine(oneThird, 0, oneThird, h, mPaint);
+                canvas.drawLine(oneThird*2, 0, oneThird*2, h, mPaint);
+                canvas.drawLine(0, oneThird, w, oneThird, mPaint);
+                canvas.drawLine(0, oneThird*2, w, oneThird*2, mPaint);
 
                 mWord.draw(canvas, mPaint);
 
@@ -91,7 +97,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
         mWord = word;
     }
 
-    public void refresh() {
+    public void reset() {
         mWord = new Word(mWord.getSize());
     }
 
@@ -104,7 +110,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
-Log.d(">>>>>>>>>>>", String.valueOf(mSize));
+        //Log.d(">>>>>>>>>>>", String.valueOf(mSize));
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 mCurrentStroke = new Stroke();

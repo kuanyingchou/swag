@@ -9,7 +9,7 @@ import org.parceler.Parcel;
 public class Point {
     float x;
     float y;
-    static float err = 0.0001f;
+    static float err = 0.00001f;
 
     public Point() {
         this(0, 0);

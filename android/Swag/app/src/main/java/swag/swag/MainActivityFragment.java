@@ -34,7 +34,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.action_refresh) {
-            surfaceView.refresh();
+            surfaceView.reset();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -58,10 +58,11 @@ public class MainActivityFragment extends Fragment {
                 super.onMeasure(size, size);
             }
         };
-        root.addView(squareContainer);
+        root.addView(squareContainer, 0);
 
         surfaceView = new MySurfaceView(getActivity());
         squareContainer.addView(surfaceView);
+        //root.addView(surfaceView);
 
         if(savedInstanceState!=null) {
             Word w = Parcels.unwrap(savedInstanceState.getParcelable(KEY_WORD));

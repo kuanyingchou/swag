@@ -43,4 +43,6 @@ dependencies {
 
     compile 'org.parceler:parceler:1.0.3'
     apt "org.parceler:parceler:1.0.3"
+
+    //compile 'io.realm:realm-android:0.82.2'
 }
