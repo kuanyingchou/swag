@@ -11,7 +11,7 @@
 		EA8D07711AD9D432006C6D7E /* PaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D07701AD9D432006C6D7E /* PaintViewController.swift */; };
 		EA8D07761AD9D432006C6D7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8D07751AD9D432006C6D7E /* Images.xcassets */; };
 		EA8D07791AD9D432006C6D7E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8D07771AD9D432006C6D7E /* LaunchScreen.xib */; };
-		EA8D07851AD9D433006C6D7E /* PaintingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D07841AD9D433006C6D7E /* PaintingTestTests.swift */; };
+		EA8D07851AD9D433006C6D7E /* swagiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D07841AD9D433006C6D7E /* swagiosTests.swift */; };
 		EA8D078F1AD9D47D006C6D7E /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D078E1AD9D47D006C6D7E /* PaintView.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		EA8D07781AD9D432006C6D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EA8D077E1AD9D433006C6D7E /* swagios.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swagios.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8D07831AD9D433006C6D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA8D07841AD9D433006C6D7E /* PaintingTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingTestTests.swift; sourceTree = "<group>"; };
+		EA8D07841AD9D433006C6D7E /* swagiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swagiosTests.swift; sourceTree = "<group>"; };
 		EA8D078E1AD9D47D006C6D7E /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +99,7 @@
 		EA8D07811AD9D433006C6D7E /* swagiosTests */ = {
 			isa = PBXGroup;
 			children = (
-				EA8D07841AD9D433006C6D7E /* PaintingTestTests.swift */,
+				EA8D07841AD9D433006C6D7E /* swagiosTests.swift */,
 				EA8D07821AD9D433006C6D7E /* Supporting Files */,
 			);
 			name = swagiosTests;
@@ -225,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA8D07851AD9D433006C6D7E /* PaintingTestTests.swift in Sources */,
+				EA8D07851AD9D433006C6D7E /* swagiosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

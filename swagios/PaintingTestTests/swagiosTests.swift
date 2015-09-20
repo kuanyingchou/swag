@@ -1,15 +1,15 @@
 //
-//  swagiosTests.swift
-//  swagiosTests
+//  PaintingTestTests.swift
+//  PaintingTestTests
 //
-//  Created by Jesse Liang on 9/19/15.
-//  Copyright © 2015 Jesse Liang. All rights reserved.
+//  Created by Rodrigo Pélissier on 11-04-15.
+//  Copyright (c) 2015 Rodrigo Pélissier. All rights reserved.
 //
 
+import UIKit
 import XCTest
-@testable import swagios
 
-class swagiosTests: XCTestCase {
+class PaintingTestTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class swagiosTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true, "Pass")
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }
