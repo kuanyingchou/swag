@@ -7,64 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02BDABFF1BAEEA17009A7EA1 /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BDABFE1BAEEA17009A7EA1 /* PaintView.swift */; settings = {ASSET_TAGS = (); }; };
-		02BDAC011BAEEA20009A7EA1 /* PaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BDAC001BAEEA20009A7EA1 /* PaintViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		02BDAC031BAEEA61009A7EA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BDAC021BAEEA61009A7EA1 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		02E6CC481BAE2D26004A7155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E6CC471BAE2D26004A7155 /* Assets.xcassets */; };
-		02E6CC4B1BAE2D26004A7155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E6CC491BAE2D26004A7155 /* LaunchScreen.storyboard */; };
-		02E6CC561BAE2D26004A7155 /* swagiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E6CC551BAE2D26004A7155 /* swagiosTests.swift */; };
-		02E6CC611BAE2D26004A7155 /* swagiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E6CC601BAE2D26004A7155 /* swagiosUITests.swift */; };
+		EA8D076F1AD9D432006C6D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D076E1AD9D432006C6D7E /* AppDelegate.swift */; };
+		EA8D07711AD9D432006C6D7E /* PaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D07701AD9D432006C6D7E /* PaintViewController.swift */; };
+		EA8D07761AD9D432006C6D7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8D07751AD9D432006C6D7E /* Images.xcassets */; };
+		EA8D07791AD9D432006C6D7E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8D07771AD9D432006C6D7E /* LaunchScreen.xib */; };
+		EA8D07851AD9D433006C6D7E /* PaintingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D07841AD9D433006C6D7E /* PaintingTestTests.swift */; };
+		EA8D078F1AD9D47D006C6D7E /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D078E1AD9D47D006C6D7E /* PaintView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		02E6CC521BAE2D26004A7155 /* PBXContainerItemProxy */ = {
+		EA8D077F1AD9D433006C6D7E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 02E6CC351BAE2D25004A7155 /* Project object */;
+			containerPortal = EA8D07611AD9D432006C6D7E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 02E6CC3C1BAE2D25004A7155;
-			remoteInfo = swagios;
-		};
-		02E6CC5D1BAE2D26004A7155 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 02E6CC351BAE2D25004A7155 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 02E6CC3C1BAE2D25004A7155;
-			remoteInfo = swagios;
+			remoteGlobalIDString = EA8D07681AD9D432006C6D7E;
+			remoteInfo = PaintingTest;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02BDABFE1BAEEA17009A7EA1 /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintView.swift; path = "../../../../Downloads/PaintingTest-master/PaintingTest/PaintView.swift"; sourceTree = "<group>"; };
-		02BDAC001BAEEA20009A7EA1 /* PaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintViewController.swift; path = "../../../../Downloads/PaintingTest-master/PaintingTest/PaintViewController.swift"; sourceTree = "<group>"; };
-		02BDAC021BAEEA61009A7EA1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../../Downloads/PaintingTest-master/PaintingTest/AppDelegate.swift"; sourceTree = "<group>"; };
-		02E6CC3D1BAE2D25004A7155 /* swagios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swagios.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		02E6CC471BAE2D26004A7155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		02E6CC4A1BAE2D26004A7155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		02E6CC4C1BAE2D26004A7155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02E6CC511BAE2D26004A7155 /* swagiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swagiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02E6CC551BAE2D26004A7155 /* swagiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swagiosTests.swift; sourceTree = "<group>"; };
-		02E6CC571BAE2D26004A7155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02E6CC5C1BAE2D26004A7155 /* swagiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swagiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02E6CC601BAE2D26004A7155 /* swagiosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swagiosUITests.swift; sourceTree = "<group>"; };
-		02E6CC621BAE2D26004A7155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8D07691AD9D432006C6D7E /* swagios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swagios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA8D076D1AD9D432006C6D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8D076E1AD9D432006C6D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA8D07701AD9D432006C6D7E /* PaintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintViewController.swift; sourceTree = "<group>"; };
+		EA8D07751AD9D432006C6D7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA8D07781AD9D432006C6D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EA8D077E1AD9D433006C6D7E /* swagios.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swagios.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA8D07831AD9D433006C6D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8D07841AD9D433006C6D7E /* PaintingTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingTestTests.swift; sourceTree = "<group>"; };
+		EA8D078E1AD9D47D006C6D7E /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		02E6CC3A1BAE2D25004A7155 /* Frameworks */ = {
+		EA8D07661AD9D432006C6D7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02E6CC4E1BAE2D26004A7155 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02E6CC591BAE2D26004A7155 /* Frameworks */ = {
+		EA8D077B1AD9D433006C6D7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,140 +56,123 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02E6CC341BAE2D25004A7155 = {
+		EA8D07601AD9D432006C6D7E = {
 			isa = PBXGroup;
 			children = (
-				02E6CC3F1BAE2D25004A7155 /* swagios */,
-				02E6CC541BAE2D26004A7155 /* swagiosTests */,
-				02E6CC5F1BAE2D26004A7155 /* swagiosUITests */,
-				02E6CC3E1BAE2D25004A7155 /* Products */,
+				EA8D076B1AD9D432006C6D7E /* swagios */,
+				EA8D07811AD9D433006C6D7E /* swagiosTests */,
+				EA8D076A1AD9D432006C6D7E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		02E6CC3E1BAE2D25004A7155 /* Products */ = {
+		EA8D076A1AD9D432006C6D7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02E6CC3D1BAE2D25004A7155 /* swagios.app */,
-				02E6CC511BAE2D26004A7155 /* swagiosTests.xctest */,
-				02E6CC5C1BAE2D26004A7155 /* swagiosUITests.xctest */,
+				EA8D07691AD9D432006C6D7E /* swagios.app */,
+				EA8D077E1AD9D433006C6D7E /* swagios.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		02E6CC3F1BAE2D25004A7155 /* swagios */ = {
+		EA8D076B1AD9D432006C6D7E /* swagios */ = {
 			isa = PBXGroup;
 			children = (
-				02E6CC471BAE2D26004A7155 /* Assets.xcassets */,
-				02BDAC021BAEEA61009A7EA1 /* AppDelegate.swift */,
-				02BDABFE1BAEEA17009A7EA1 /* PaintView.swift */,
-				02BDAC001BAEEA20009A7EA1 /* PaintViewController.swift */,
-				02E6CC491BAE2D26004A7155 /* LaunchScreen.storyboard */,
-				02E6CC4C1BAE2D26004A7155 /* Info.plist */,
+				EA8D076E1AD9D432006C6D7E /* AppDelegate.swift */,
+				EA8D078E1AD9D47D006C6D7E /* PaintView.swift */,
+				EA8D07701AD9D432006C6D7E /* PaintViewController.swift */,
+				EA8D07751AD9D432006C6D7E /* Images.xcassets */,
+				EA8D07771AD9D432006C6D7E /* LaunchScreen.xib */,
+				EA8D076C1AD9D432006C6D7E /* Supporting Files */,
 			);
-			path = swagios;
+			name = swagios;
+			path = PaintingTest;
 			sourceTree = "<group>";
 		};
-		02E6CC541BAE2D26004A7155 /* swagiosTests */ = {
+		EA8D076C1AD9D432006C6D7E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				02E6CC551BAE2D26004A7155 /* swagiosTests.swift */,
-				02E6CC571BAE2D26004A7155 /* Info.plist */,
+				EA8D076D1AD9D432006C6D7E /* Info.plist */,
 			);
-			path = swagiosTests;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		02E6CC5F1BAE2D26004A7155 /* swagiosUITests */ = {
+		EA8D07811AD9D433006C6D7E /* swagiosTests */ = {
 			isa = PBXGroup;
 			children = (
-				02E6CC601BAE2D26004A7155 /* swagiosUITests.swift */,
-				02E6CC621BAE2D26004A7155 /* Info.plist */,
+				EA8D07841AD9D433006C6D7E /* PaintingTestTests.swift */,
+				EA8D07821AD9D433006C6D7E /* Supporting Files */,
 			);
-			path = swagiosUITests;
+			name = swagiosTests;
+			path = PaintingTestTests;
+			sourceTree = "<group>";
+		};
+		EA8D07821AD9D433006C6D7E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA8D07831AD9D433006C6D7E /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02E6CC3C1BAE2D25004A7155 /* swagios */ = {
+		EA8D07681AD9D432006C6D7E /* swagios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02E6CC651BAE2D26004A7155 /* Build configuration list for PBXNativeTarget "swagios" */;
+			buildConfigurationList = EA8D07881AD9D433006C6D7E /* Build configuration list for PBXNativeTarget "swagios" */;
 			buildPhases = (
-				02E6CC391BAE2D25004A7155 /* Sources */,
-				02E6CC3A1BAE2D25004A7155 /* Frameworks */,
-				02E6CC3B1BAE2D25004A7155 /* Resources */,
+				EA8D07651AD9D432006C6D7E /* Sources */,
+				EA8D07661AD9D432006C6D7E /* Frameworks */,
+				EA8D07671AD9D432006C6D7E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = swagios;
-			productName = swagios;
-			productReference = 02E6CC3D1BAE2D25004A7155 /* swagios.app */;
+			productName = PaintingTest;
+			productReference = EA8D07691AD9D432006C6D7E /* swagios.app */;
 			productType = "com.apple.product-type.application";
 		};
-		02E6CC501BAE2D26004A7155 /* swagiosTests */ = {
+		EA8D077D1AD9D433006C6D7E /* swagiosTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02E6CC681BAE2D26004A7155 /* Build configuration list for PBXNativeTarget "swagiosTests" */;
+			buildConfigurationList = EA8D078B1AD9D433006C6D7E /* Build configuration list for PBXNativeTarget "swagiosTests" */;
 			buildPhases = (
-				02E6CC4D1BAE2D26004A7155 /* Sources */,
-				02E6CC4E1BAE2D26004A7155 /* Frameworks */,
-				02E6CC4F1BAE2D26004A7155 /* Resources */,
+				EA8D077A1AD9D433006C6D7E /* Sources */,
+				EA8D077B1AD9D433006C6D7E /* Frameworks */,
+				EA8D077C1AD9D433006C6D7E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				02E6CC531BAE2D26004A7155 /* PBXTargetDependency */,
+				EA8D07801AD9D433006C6D7E /* PBXTargetDependency */,
 			);
 			name = swagiosTests;
-			productName = swagiosTests;
-			productReference = 02E6CC511BAE2D26004A7155 /* swagiosTests.xctest */;
+			productName = PaintingTestTests;
+			productReference = EA8D077E1AD9D433006C6D7E /* swagios.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		02E6CC5B1BAE2D26004A7155 /* swagiosUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 02E6CC6B1BAE2D26004A7155 /* Build configuration list for PBXNativeTarget "swagiosUITests" */;
-			buildPhases = (
-				02E6CC581BAE2D26004A7155 /* Sources */,
-				02E6CC591BAE2D26004A7155 /* Frameworks */,
-				02E6CC5A1BAE2D26004A7155 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				02E6CC5E1BAE2D26004A7155 /* PBXTargetDependency */,
-			);
-			name = swagiosUITests;
-			productName = swagiosUITests;
-			productReference = 02E6CC5C1BAE2D26004A7155 /* swagiosUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		02E6CC351BAE2D25004A7155 /* Project object */ = {
+		EA8D07611AD9D432006C6D7E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "Jesse Liang";
+				ORGANIZATIONNAME = "Rodrigo Pélissier";
 				TargetAttributes = {
-					02E6CC3C1BAE2D25004A7155 = {
-						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = H598HBDDJ8;
+					EA8D07681AD9D432006C6D7E = {
+						CreatedOnToolsVersion = 6.3;
 					};
-					02E6CC501BAE2D26004A7155 = {
-						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = H598HBDDJ8;
-						TestTargetID = 02E6CC3C1BAE2D25004A7155;
-					};
-					02E6CC5B1BAE2D26004A7155 = {
-						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = H598HBDDJ8;
-						TestTargetID = 02E6CC3C1BAE2D25004A7155;
+					EA8D077D1AD9D433006C6D7E = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = EA8D07681AD9D432006C6D7E;
 					};
 				};
 			};
-			buildConfigurationList = 02E6CC381BAE2D25004A7155 /* Build configuration list for PBXProject "swagios" */;
+			buildConfigurationList = EA8D07641AD9D432006C6D7E /* Build configuration list for PBXProject "swagios" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -215,36 +180,28 @@
 				en,
 				Base,
 			);
-			mainGroup = 02E6CC341BAE2D25004A7155;
-			productRefGroup = 02E6CC3E1BAE2D25004A7155 /* Products */;
+			mainGroup = EA8D07601AD9D432006C6D7E;
+			productRefGroup = EA8D076A1AD9D432006C6D7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02E6CC3C1BAE2D25004A7155 /* swagios */,
-				02E6CC501BAE2D26004A7155 /* swagiosTests */,
-				02E6CC5B1BAE2D26004A7155 /* swagiosUITests */,
+				EA8D07681AD9D432006C6D7E /* swagios */,
+				EA8D077D1AD9D433006C6D7E /* swagiosTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		02E6CC3B1BAE2D25004A7155 /* Resources */ = {
+		EA8D07671AD9D432006C6D7E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E6CC4B1BAE2D26004A7155 /* LaunchScreen.storyboard in Resources */,
-				02E6CC481BAE2D26004A7155 /* Assets.xcassets in Resources */,
+				EA8D07791AD9D432006C6D7E /* LaunchScreen.xib in Resources */,
+				EA8D07761AD9D432006C6D7E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02E6CC4F1BAE2D26004A7155 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02E6CC5A1BAE2D26004A7155 /* Resources */ = {
+		EA8D077C1AD9D433006C6D7E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,60 +211,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		02E6CC391BAE2D25004A7155 /* Sources */ = {
+		EA8D07651AD9D432006C6D7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02BDAC031BAEEA61009A7EA1 /* AppDelegate.swift in Sources */,
-				02BDABFF1BAEEA17009A7EA1 /* PaintView.swift in Sources */,
-				02BDAC011BAEEA20009A7EA1 /* PaintViewController.swift in Sources */,
+				EA8D07711AD9D432006C6D7E /* PaintViewController.swift in Sources */,
+				EA8D076F1AD9D432006C6D7E /* AppDelegate.swift in Sources */,
+				EA8D078F1AD9D47D006C6D7E /* PaintView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		02E6CC4D1BAE2D26004A7155 /* Sources */ = {
+		EA8D077A1AD9D433006C6D7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E6CC561BAE2D26004A7155 /* swagiosTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		02E6CC581BAE2D26004A7155 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02E6CC611BAE2D26004A7155 /* swagiosUITests.swift in Sources */,
+				EA8D07851AD9D433006C6D7E /* PaintingTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		02E6CC531BAE2D26004A7155 /* PBXTargetDependency */ = {
+		EA8D07801AD9D433006C6D7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 02E6CC3C1BAE2D25004A7155 /* swagios */;
-			targetProxy = 02E6CC521BAE2D26004A7155 /* PBXContainerItemProxy */;
-		};
-		02E6CC5E1BAE2D26004A7155 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 02E6CC3C1BAE2D25004A7155 /* swagios */;
-			targetProxy = 02E6CC5D1BAE2D26004A7155 /* PBXContainerItemProxy */;
+			target = EA8D07681AD9D432006C6D7E /* swagios */;
+			targetProxy = EA8D077F1AD9D433006C6D7E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		02E6CC491BAE2D26004A7155 /* LaunchScreen.storyboard */ = {
+		EA8D07771AD9D432006C6D7E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				02E6CC4A1BAE2D26004A7155 /* Base */,
+				EA8D07781AD9D432006C6D7E /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		02E6CC631BAE2D26004A7155 /* Debug */ = {
+		EA8D07861AD9D433006C6D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -326,7 +270,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -337,13 +281,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -351,7 +296,7 @@
 			};
 			name = Debug;
 		};
-		02E6CC641BAE2D26004A7155 /* Release */ = {
+		EA8D07871AD9D433006C6D7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -381,130 +326,109 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		02E6CC661BAE2D26004A7155 /* Debug */ = {
+		EA8D07891AD9D433006C6D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = swagios/Info.plist;
+				INFOPLIST_FILE = PaintingTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LLVM_LTO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jesseliang.swagios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_NAME = swagios;
 			};
 			name = Debug;
 		};
-		02E6CC671BAE2D26004A7155 /* Release */ = {
+		EA8D078A1AD9D433006C6D7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = swagios/Info.plist;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				INFOPLIST_FILE = PaintingTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LLVM_LTO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jesseliang.swagios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = swagios;
+				SWIFT_DISABLE_SAFETY_CHECKS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
-		02E6CC691BAE2D26004A7155 /* Debug */ = {
+		EA8D078C1AD9D433006C6D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = swagiosTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PaintingTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jesseliang.swagiosTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rodrigo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = swagios;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swagios.app/swagios";
 			};
 			name = Debug;
 		};
-		02E6CC6A1BAE2D26004A7155 /* Release */ = {
+		EA8D078D1AD9D433006C6D7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = swagiosTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PaintingTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jesseliang.swagiosTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rodrigo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = swagios;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swagios.app/swagios";
-			};
-			name = Release;
-		};
-		02E6CC6C1BAE2D26004A7155 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = swagiosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jesseliang.swagiosUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = swagios;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		02E6CC6D1BAE2D26004A7155 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = swagiosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jesseliang.swagiosUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = swagios;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02E6CC381BAE2D25004A7155 /* Build configuration list for PBXProject "swagios" */ = {
+		EA8D07641AD9D432006C6D7E /* Build configuration list for PBXProject "swagios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				02E6CC631BAE2D26004A7155 /* Debug */,
-				02E6CC641BAE2D26004A7155 /* Release */,
+				EA8D07861AD9D433006C6D7E /* Debug */,
+				EA8D07871AD9D433006C6D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02E6CC651BAE2D26004A7155 /* Build configuration list for PBXNativeTarget "swagios" */ = {
+		EA8D07881AD9D433006C6D7E /* Build configuration list for PBXNativeTarget "swagios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				02E6CC661BAE2D26004A7155 /* Debug */,
-				02E6CC671BAE2D26004A7155 /* Release */,
+				EA8D07891AD9D433006C6D7E /* Debug */,
+				EA8D078A1AD9D433006C6D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02E6CC681BAE2D26004A7155 /* Build configuration list for PBXNativeTarget "swagiosTests" */ = {
+		EA8D078B1AD9D433006C6D7E /* Build configuration list for PBXNativeTarget "swagiosTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				02E6CC691BAE2D26004A7155 /* Debug */,
-				02E6CC6A1BAE2D26004A7155 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		02E6CC6B1BAE2D26004A7155 /* Build configuration list for PBXNativeTarget "swagiosUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				02E6CC6C1BAE2D26004A7155 /* Debug */,
-				02E6CC6D1BAE2D26004A7155 /* Release */,
+				EA8D078C1AD9D433006C6D7E /* Debug */,
+				EA8D078D1AD9D433006C6D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 02E6CC351BAE2D25004A7155 /* Project object */;
+	rootObject = EA8D07611AD9D432006C6D7E /* Project object */;
 }

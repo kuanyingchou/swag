@@ -1,7 +1,0 @@
-pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON'
-
-target :test do
-pod 'SwiftyJSON', '~> 2.3'
-end
-
-

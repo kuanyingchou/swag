@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02E6CC3C1BAE2D25004A7155"
-               BuildableName = "swagios.app"
-               BlueprintName = "swagios"
-               ReferencedContainer = "container:swagios.xcodeproj">
+               BlueprintIdentifier = "EA8D07681AD9D432006C6D7E"
+               BuildableName = "PaintingTest.app"
+               BlueprintName = "PaintingTest"
+               ReferencedContainer = "container:PaintingTest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EA8D077D1AD9D433006C6D7E"
+               BuildableName = "PaintingTestTests.xctest"
+               BlueprintName = "PaintingTestTests"
+               ReferencedContainer = "container:PaintingTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02E6CC501BAE2D26004A7155"
-               BuildableName = "swagiosTests.xctest"
-               BlueprintName = "swagiosTests"
-               ReferencedContainer = "container:swagios.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02E6CC5B1BAE2D26004A7155"
-               BuildableName = "swagiosUITests.xctest"
-               BlueprintName = "swagiosUITests"
-               ReferencedContainer = "container:swagios.xcodeproj">
+               BlueprintIdentifier = "EA8D077D1AD9D433006C6D7E"
+               BuildableName = "PaintingTestTests.xctest"
+               BlueprintName = "PaintingTestTests"
+               ReferencedContainer = "container:PaintingTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E6CC3C1BAE2D25004A7155"
-            BuildableName = "swagios.app"
-            BlueprintName = "swagios"
-            ReferencedContainer = "container:swagios.xcodeproj">
+            BlueprintIdentifier = "EA8D07681AD9D432006C6D7E"
+            BuildableName = "PaintingTest.app"
+            BlueprintName = "PaintingTest"
+            ReferencedContainer = "container:PaintingTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +79,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E6CC3C1BAE2D25004A7155"
-            BuildableName = "swagios.app"
-            BlueprintName = "swagios"
-            ReferencedContainer = "container:swagios.xcodeproj">
+            BlueprintIdentifier = "EA8D07681AD9D432006C6D7E"
+            BuildableName = "PaintingTest.app"
+            BlueprintName = "PaintingTest"
+            ReferencedContainer = "container:PaintingTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +98,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02E6CC3C1BAE2D25004A7155"
-            BuildableName = "swagios.app"
-            BlueprintName = "swagios"
-            ReferencedContainer = "container:swagios.xcodeproj">
+            BlueprintIdentifier = "EA8D07681AD9D432006C6D7E"
+            BuildableName = "PaintingTest.app"
+            BlueprintName = "PaintingTest"
+            ReferencedContainer = "container:PaintingTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
