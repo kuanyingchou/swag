@@ -102,6 +102,13 @@ class MySurfaceView extends SurfaceView implements Runnable {
         mWord = new Word();
     }
 
+    public void undo() {
+        //TODO
+    }
+    public void redo() {
+        //TODO
+    }
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);

@@ -6,12 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.gson.Gson;
@@ -34,15 +34,24 @@ public class BrowseActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        GridView view = (GridView) inflater.inflate(R.layout.fragment_browse, container, false);
+        View root = inflater.inflate(R.layout.fragment_browse, container, false);
+        GridView view = (GridView) root.findViewById(R.id.browse_grid);
+
+        ImageButton btn = (ImageButton)view.findViewById(R.id.refresh_button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO
+            }
+        });
 
         WordSqlHelper helper = new WordSqlHelper(getActivity());
         SQLiteDatabase db = helper.getReadableDatabase();
         String orderBy = WordContract.WordEntry.COLUMN_DATE + " DESC";
         Cursor c = db.query(WordContract.WordEntry.TABLE_NAME, null, null, null, null, null, orderBy);
-Log.d(">>>>", c.getCount()+"");
+//Log.d(">>>>", c.getCount()+"");
         view.setAdapter(new WordAdapter(getActivity(), c, 0));
-        return view;
+        return root;
     }
 
     Paint paint = new Paint();
