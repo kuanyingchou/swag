@@ -43,7 +43,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(KEY_WORD, Parcels.wrap(surfaceView.getStrokes()));
+        outState.putParcelable(KEY_WORD, Parcels.wrap(surfaceView.getWord()));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class MainActivityFragment extends Fragment {
 
         if(savedInstanceState!=null) {
             Word w = Parcels.unwrap(savedInstanceState.getParcelable(KEY_WORD));
-            surfaceView.setStrokes(w);
+            surfaceView.setWord(w);
         }
 
         return root;

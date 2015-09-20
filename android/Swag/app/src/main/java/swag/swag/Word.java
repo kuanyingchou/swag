@@ -11,14 +11,20 @@ import java.util.List;
 
 @Parcel
 public class Word {
-    private float width;
-    private float height;
-    private float strokeWidth;
-    private List<Stroke> mStrokes;
+    float size;
+    float strokeWidth = .05f;
+    List<Stroke> mStrokes;
 
     public Word() {
-        mStrokes = new ArrayList<>();
+        this(0);
     }
+    public Word(float size) {
+        mStrokes = new ArrayList<>();
+        this.size = size;
+    }
+
+    public void setSize(float s) { size = s; }
+    public float getSize() { return size; }
 
     public void add(Stroke stroke) {
         mStrokes.add(stroke);
@@ -26,7 +32,7 @@ public class Word {
 
     public void draw(Canvas canvas, Paint paint) {
         paint.setColor(Color.BLACK);
-        paint.setStrokeWidth(50);
+        paint.setStrokeWidth(strokeWidth * size);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
 
@@ -34,13 +40,13 @@ public class Word {
         if(mStrokes.size() > 1) {
             for (int i = 0; i < mStrokes.size() - 1; i++) {
                 final Stroke stroke = mStrokes.get(i);
-                stroke.draw(canvas, paint);
+                stroke.draw(canvas, paint, size);
             }
         }
 
         //draw last stroke
         if(mStrokes.size() > 0) {
-            mStrokes.get(mStrokes.size()-1).safeDraw(canvas, paint);
+            mStrokes.get(mStrokes.size()-1).safeDraw(canvas, paint, size);
         }
     }
 

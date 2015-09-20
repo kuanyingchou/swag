@@ -7,9 +7,9 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Point {
-    private float x;
-    private float y;
-    private static float err = 0.01f;
+    float x;
+    float y;
+    static float err = 0.0001f;
 
     public Point() {
         this(0, 0);
@@ -39,8 +39,8 @@ public class Point {
     }
 
 
-    public void draw(Canvas canvas, Paint paint) {
-        canvas.drawPoint(x, y, paint);
+    public void draw(Canvas canvas, Paint paint, float size) {
+        canvas.drawPoint(x * size, y * size, paint);
     }
 
     @Override

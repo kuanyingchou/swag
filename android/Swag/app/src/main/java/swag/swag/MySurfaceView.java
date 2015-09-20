@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -17,6 +18,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Word mWord = new Word();
     private Stroke mCurrentStroke;
+    private float mSize;
 
     public MySurfaceView(Context context) {
         super(context);
@@ -65,7 +67,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
                 mPaint.setStrokeWidth(10);
                 canvas.drawRect(0, 0, w, h, mPaint);
 
-                mPaint.setStrokeWidth(1);
+                mPaint.setStrokeWidth(2);
                 final float oneThrid = w/3;
                 canvas.drawLine(oneThrid, 0, oneThrid, h, mPaint);
                 canvas.drawLine(oneThrid*2, 0, oneThrid*2, h, mPaint);
@@ -81,35 +83,41 @@ class MySurfaceView extends SurfaceView implements Runnable {
         }
     }
 
-    public Word getStrokes() {
+    public Word getWord() {
         return mWord;
     }
 
-    public void setStrokes(Word strokes) {
-        mWord = strokes;
+    public void setWord(Word word) {
+        mWord = word;
     }
 
     public void refresh() {
-        mWord = new Word();
+        mWord = new Word(mWord.getSize());
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        mWord.setSize(mSize = getWidth()); //>>>
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
-
+Log.d(">>>>>>>>>>>", String.valueOf(mSize));
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 mCurrentStroke = new Stroke();
-                mCurrentStroke.add(new Point(event.getX(), event.getY()));
+                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize));
                 mWord.add(mCurrentStroke);
                 break;
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_OUTSIDE:
-                mCurrentStroke.add(new Point(event.getX(), event.getY()));
+                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize));
                 break;
             case MotionEvent.ACTION_UP:
-                mCurrentStroke.add(new Point(event.getX(), event.getY()));
+                mCurrentStroke.add(new Point(event.getX() / mSize, event.getY() / mSize));
                 mCurrentStroke.simplify();
                 //Log.d(">>>>>>>", mWord.toString());
                 break;

@@ -10,7 +10,7 @@ import java.util.List;
 
 @Parcel
 public class Stroke {
-    private List<Point> points;
+    List<Point> points;
 
     public Stroke() {
         points = new ArrayList<>();
@@ -33,24 +33,26 @@ public class Stroke {
         points.add(p);
     }
 
-    public void draw(Canvas canvas, Paint paint) {
+    public void draw(Canvas canvas, Paint paint, float size) {
         if(points.size() == 1) {
             final Point p = points.get(0);
-            p.draw(canvas, paint);
+            p.draw(canvas, paint, size);
         } else if(points.size() > 1) {
             for(int i = 0; i<points.size()-1; i++) {
                 final Point start = points.get(i);
                 final Point stop = points.get(i+1);
-                canvas.drawLine(start.getX(), start.getY(), stop.getX(), stop.getY(), paint);
+                canvas.drawLine(
+                        start.getX()*size, start.getY()*size,
+                        stop.getX()*size, stop.getY()*size, paint);
             }
         } else {
             //ignore empty stroke
         }
     }
 
-    public void safeDraw(Canvas canvas, Paint paint) {
+    public void safeDraw(Canvas canvas, Paint paint, float size) {
         final Stroke copy = new Stroke(this); //copy
-        copy.draw(canvas, paint);
+        copy.draw(canvas, paint, size);
     }
 
     public void simplify() {
