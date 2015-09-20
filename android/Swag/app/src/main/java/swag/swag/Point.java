@@ -3,10 +3,17 @@ package swag.swag;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-class Point {
+import org.parceler.Parcel;
+
+@Parcel
+public class Point {
     private float x;
     private float y;
     private static float err = 0.01f;
+
+    public Point() {
+        this(0, 0);
+    }
 
     public Point(float x, float y) {
         this.x = x;

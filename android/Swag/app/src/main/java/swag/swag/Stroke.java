@@ -3,10 +3,13 @@ package swag.swag;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 import java.util.List;
 
-class Stroke {
+@Parcel
+public class Stroke {
     private List<Point> points;
 
     public Stroke() {

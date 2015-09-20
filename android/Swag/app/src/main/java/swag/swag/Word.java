@@ -3,9 +3,12 @@ package swag.swag;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Word {
     private List<Stroke> mStrokes;
 
