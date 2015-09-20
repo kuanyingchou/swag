@@ -1,0 +1,33 @@
+<% @drawings.each do |drawing| %>
+	<%= drawing.svg %>
+<% end %>
+<canvas id="foobar"></canvas>
+<%= javascript_include_tag 'jsdraw' %>
+<script>
+	var json = {"mStrokes":
+	[
+		{"points":
+			[
+				{"p":0.6,"x":0.11077236,"y":0.5945122},
+				{"p":0.6,"x":0.11686992,"y":0.5863821},
+				{"p":0.6,"x":0.16260162,"y":0.5558943},
+				{"p":0.6,"x":0.23780487,"y":0.5254065},
+				{"p":0.6,"x":0.33638212,"y":0.49898374},
+				{"p":0.6,"x":0.44308943,"y":0.48069105},
+				{"p":0.6,"x":0.5558943,"y":0.4745935},
+				{"p":0.6,"x":0.61178863,"y":0.47560975}
+			]
+		,"strokeWidth":0.1}
+	]}
+	strokes = json.mStrokes
+	d = []
+	for (var i = 0; i < mStrokes.length; i++) {
+    var counter = jsonData.counters[i];
+    d.append(counter)
+	}
+	var gr = new jsGraphics(document.getElementById('foobar'))
+	var col = new jsColor("black")
+	var pen = new jsPen(col, "2px")
+	var pt1 = new jsPoint(points[0].x, points[0].y)
+	console.log(points[0].x, points[0].y)
+</script>
