@@ -1,19 +1,49 @@
 package swag.swag;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+
+import org.parceler.Parcels;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
+    public static final String KEY_WORD = "word";
 
     private MySurfaceView surfaceView;
 
     public MainActivityFragment() {
+        setHasOptionsMenu(true);
+    }
+
+    //[ options
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main_fragment, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.action_refresh) {
+            surfaceView.refresh();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(KEY_WORD, Parcels.wrap(surfaceView.getWord()));
     }
 
     @Override
@@ -21,8 +51,23 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_main, container, false);
 
+        final FrameLayout squareContainer = new FrameLayout(getActivity()) {
+            @Override
+            protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+                int size = Math.min(widthMeasureSpec, heightMeasureSpec);
+                super.onMeasure(size, size);
+            }
+        };
+        root.addView(squareContainer);
+
         surfaceView = new MySurfaceView(getActivity());
-        root.addView(surfaceView);
+        squareContainer.addView(surfaceView);
+
+        if(savedInstanceState!=null) {
+            Word w = Parcels.unwrap(savedInstanceState.getParcelable(KEY_WORD));
+            surfaceView.setWord(w);
+        }
+
         return root;
     }
 
