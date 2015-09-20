@@ -4,13 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 //ref: http://android-coding.blogspot.com/2011/05/handle-ontouchevent-in-surfaceview.html
 class MySurfaceView extends SurfaceView implements Runnable {
@@ -19,7 +15,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
     SurfaceHolder surfaceHolder;
     volatile boolean running = false;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private List<Stroke> mStrokes = new ArrayList<>();
+    private Word mStrokes = new Word();
     private Stroke mCurrentStroke;
 
     public MySurfaceView(Context context) {
@@ -47,7 +43,6 @@ class MySurfaceView extends SurfaceView implements Runnable {
         }
     }
 
-
     @Override
     public void run() {
         // TODO Auto-generated method stub
@@ -66,18 +61,8 @@ class MySurfaceView extends SurfaceView implements Runnable {
                 mPaint.setStrokeCap(Paint.Cap.ROUND);
                 mPaint.setStrokeJoin(Paint.Join.ROUND);
 
-                //draw old mStrokes
-                if(mStrokes.size() > 1) {
-                    for (int i = 0; i < mStrokes.size() - 1; i++) {
-                        final Stroke stroke = mStrokes.get(i);
-                        stroke.draw(canvas, mPaint);
-                    }
-                }
+                mStrokes.draw(canvas, mPaint);
 
-                //draw last stroke
-                if(mStrokes.size() > 0) {
-                    mCurrentStroke.safeDraw(canvas, mPaint);
-                }
 
                 surfaceHolder.unlockCanvasAndPost(canvas);
                 //Log.d(">>>>>>>>", "!");
@@ -85,8 +70,16 @@ class MySurfaceView extends SurfaceView implements Runnable {
         }
     }
 
+    public Word getStrokes() {
+        return mStrokes;
+    }
+
+    public void setStrokes(Word strokes) {
+        mStrokes = strokes;
+    }
+
     public void refresh() {
-        mStrokes = new ArrayList<>();
+        mStrokes = new Word();
     }
 
 
@@ -106,7 +99,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
             case MotionEvent.ACTION_UP:
                 mCurrentStroke.add(new Point(event.getX(), event.getY()));
                 mCurrentStroke.simplify();
-                Log.d(">>>>>>>", mStrokes.toString());
+                //Log.d(">>>>>>>", mStrokes.toString());
                 break;
             case MotionEvent.ACTION_CANCEL:
                 break;
