@@ -46,7 +46,7 @@ public class Stroke {
             for(int i = 0; i<points.size()-1; i++) {
                 final Point start = points.get(i);
                 final Point stop = points.get(i+1);
-                paint.setStrokeWidth(strokeWidth * size * start.getPressure() * start.getPressure());
+                paint.setStrokeWidth(strokeWidth * size * start.getPressure() * start.getPressure()); //>>>
                 canvas.drawLine(
                         start.getX() * size, start.getY() * size,
                         stop.getX() * size, stop.getY() * size, paint);

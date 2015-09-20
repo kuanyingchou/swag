@@ -46,9 +46,10 @@ class MySurfaceView extends SurfaceView implements Runnable {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //int size = Math.min(getRootView().getMeasuredWidth(), getRootView().getMeasuredHeight());
+//        int size = Math.min(getRootView().getMeasuredWidth(), getRootView().getMeasuredHeight());
         int size = Math.min(widthMeasureSpec, heightMeasureSpec);
         setMeasuredDimension(size, size);
+//        setMeasuredDimension(400, 400);
     }
 
     @Override
@@ -80,7 +81,7 @@ class MySurfaceView extends SurfaceView implements Runnable {
                 canvas.drawLine(0, oneThird, w, oneThird, mPaint);
                 canvas.drawLine(0, oneThird*2, w, oneThird*2, mPaint);
 
-                mWord.draw(canvas, mPaint);
+                mWord.draw(canvas, mPaint, mSize);
 
 
                 surfaceHolder.unlockCanvasAndPost(canvas);
@@ -98,13 +99,13 @@ class MySurfaceView extends SurfaceView implements Runnable {
     }
 
     public void reset() {
-        mWord = new Word(mWord.getSize());
+        mWord = new Word();
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mWord.setSize(mSize = getWidth()); //>>>
+        mSize = getWidth(); //>>>
     }
 
     @Override

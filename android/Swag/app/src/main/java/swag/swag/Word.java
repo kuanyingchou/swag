@@ -11,26 +11,22 @@ import java.util.List;
 
 @Parcel
 public class Word {
-    float size;
+    //float size;
 
     List<Stroke> mStrokes;
 
     public Word() {
-        this(0);
-    }
-    public Word(float size) {
-        mStrokes = new ArrayList<>();
-        this.size = size;
+        mStrokes = new ArrayList<>();;
     }
 
-    public void setSize(float s) { size = s; }
-    public float getSize() { return size; }
+//    public void setSize(float s) { size = s; }
+//    public float getSize() { return size; }
 
     public void add(Stroke stroke) {
         mStrokes.add(stroke);
     }
 
-    public void draw(Canvas canvas, Paint paint) {
+    public void draw(Canvas canvas, Paint paint, float size) {
         paint.setColor(Color.BLACK);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);

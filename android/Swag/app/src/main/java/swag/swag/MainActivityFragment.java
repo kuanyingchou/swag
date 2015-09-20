@@ -1,5 +1,11 @@
 package swag.swag;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,7 +17,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.google.gson.Gson;
+
 import org.parceler.Parcels;
+
+import java.io.File;
+import java.util.Calendar;
+
+import swag.swag.data.WordContract;
+
 
 /**
  * A placeholder fragment containing a simple view.
@@ -69,9 +83,41 @@ public class MainActivityFragment extends Fragment {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Gson gson = new Gson();
+                String json = gson.toJson(surfaceView.getWord());
+                WordSqlHelper helper = new WordSqlHelper(getActivity());
+                SQLiteDatabase db = helper.getWritableDatabase();
+
+                ContentValues cv = new ContentValues();
+
+                Calendar c = Calendar.getInstance();
+                int seconds = c.get(Calendar.SECOND);
+
+                cv.put(WordContract.WordEntry.COLUMN_DATE, seconds);
+                cv.put(WordContract.WordEntry.COLUMN_SKETCH, json);
+
+                long id = db.insert(WordContract.WordEntry.TABLE_NAME, null, cv); //TODO: err handling
+
+                //thumbnail
+                Bitmap bitmap = Bitmap.createBitmap(192, 192, Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(bitmap);
+                surfaceView.getWord().draw(canvas, new Paint(), 192);
+                File file = new File(getActivity().getFilesDir(), id+".png");
+                Utility.saveBitmapToFile(bitmap, file);
+
+                //Log.d(">>> ", gson.toJson(surfaceView.getWord()));
 
             }
         });
+        Button browseButton = (Button) root.findViewById(R.id.action_browse);
+        browseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BrowseActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         if(savedInstanceState!=null) {
             Word w = Parcels.unwrap(savedInstanceState.getParcelable(KEY_WORD));
